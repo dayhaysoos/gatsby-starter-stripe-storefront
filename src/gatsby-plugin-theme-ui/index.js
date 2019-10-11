@@ -1,10 +1,10 @@
-import merge from 'deepmerge'
-import baseTheme from 'gatsby-theme-stripe-storefront/src/gatsby-plugin-theme-ui'
+import merge from "deepmerge";
+import baseTheme from "gatsby-theme-stripe-storefront/src/gatsby-plugin-theme-ui";
 
 export default merge(baseTheme, {
   colors: {
     primary: baseTheme.colors.primary,
     secondary: baseTheme.colors.secondary,
-    accent: baseTheme.colors.accent,
-  },
-})
+    accent: baseTheme.colors.accent
+  }
+});
