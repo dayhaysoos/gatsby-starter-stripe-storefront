@@ -12,7 +12,7 @@
     "deepmerge": "^4.1.1",
     "dotenv": "^8.1.0",
     "gatsby": "^2.15.36",
-    "gatsby-theme-stripe-storefront": "^1.1.0",
+    "gatsby-theme-stripe-storefront": "^1.5.15",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
