@@ -3,9 +3,8 @@ import baseTheme from "gatsby-theme-stripe-storefront/src/gatsby-plugin-theme-ui
 
 export default merge(baseTheme, {
   colors: {
-    primary: baseTheme.colors.primary,
+    primary: "red",
     primaryText: "white",
-    secondary: baseTheme.colors.secondary,
-    accent: baseTheme.colors.accent
+    secondary: "black"
   }
 });

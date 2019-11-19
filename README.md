@@ -1,5 +1,9 @@
 # Gatsby Starter Stripe Storefront
 
+## WARNING!!!
+
+This only works for Stripe's new Checkout API. If you create your products with "Orders" this will not work
+
 This is a starter built off of [gatsby-theme-stripe-storefront](https://github.com/dayhaysoos/gatsby-theme-stripe/tree/master/packages/gatsby-theme-stripe-storefront)
 
 # Usage
@@ -50,22 +54,20 @@ You probably want to change the main colors of the storefront. You can do so by 
 
 `src/gatsby-plugin-theme-ui/index.js`
 
-```
-
+```js
 import merge from "deepmerge";
 import baseTheme from "gatsby-theme-stripe-storefront/src/gatsby-plugin-theme-ui";
 
-
 export default merge(baseTheme, {
   colors: {
-    primary: baseTheme.colors.primary,
-    secondary: baseTheme.colors.secondary,
-    accent: baseTheme.colors.accent,
-  },
-})
+    primary: "red",
+    primaryText: "white",
+    secondary: "black"
+  }
+});
 ```
 
-Change the primary, secondary and accent values to be the colors that you desire.
+Change the primary, secondary and primaryText values to be the colors that you desire.
 
 # Logo
 
