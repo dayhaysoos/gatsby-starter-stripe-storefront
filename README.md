@@ -113,3 +113,7 @@ The `/thank-you` page deletes the shopping cart data and redirects to the home p
 ### Home Page and Products Page
 
 By default, these are the same. If you'd like to have your own content for your home page, simply make an index.js file in the `pages` directory.
+
+# Feedback
+
+If you ran into issues trying to use this, would like to request a feature or areas where this can be improved, please open up an issue or hit me up on Twitter. @Dayhaysoos
