@@ -102,7 +102,7 @@ export default props => <Logo {...props} logo={image} />
 
 # SEO
 
-Because this was made with Gatsby's default starter, the SEO component is available to use on each of your pages. The index page is being shadowedjust to use the SEO component because the starter itself doesn't have SEO set up.
+Because this was made with Gatsby's default starter, the SEO component is available to use on each of your pages. The index page is being shadowed just to use the SEO component because the starter itself doesn't have SEO set up.
 
 # Notes
 
