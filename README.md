@@ -6,6 +6,13 @@ This only works for Stripe's new Checkout API. If you create your products with 
 
 This is a starter built off of [gatsby-theme-stripe-storefront](https://github.com/dayhaysoos/gatsby-theme-stripe/tree/master/packages/gatsby-theme-stripe-storefront)
 
+The base of this starter is using the default gatsby starter
+
+# Features
+
+- Shopping Cart experience with your Stripe products from the dashboard
+- Responsive for Desktop, tablet and Mobile
+
 # Usage
 
 The idea is to be able to quickly set up a bare-minimum e-commerce page using your Stripe API keys.
@@ -24,6 +31,8 @@ STRIPE_API_PUBLIC=PUBLIC_KEY_HERE
 
 ```
 
+For production, you need env variables for your live API keys
+
 To get your Stripe products running to display in this starter, you need to pass your Stripe API Public key to the `gatsby-config.js` file:
 
 ```
@@ -37,6 +46,8 @@ module.exports = {
       resolve: 'gatsby-theme-stripe-storefront',
       options: {
         stripePublicKey: process.env.STRIPE_API_PUBLIC,
+        billingAddressCollection: 'required', // optional if you need billing addresses from customers
+        successUrl: localhost:8000/thank-you // replace this url with the real url to your site with /thank-you at the end
       },
     },
   ],
@@ -55,16 +66,18 @@ You probably want to change the main colors of the storefront. You can do so by 
 `src/gatsby-plugin-theme-ui/index.js`
 
 ```js
-import merge from "deepmerge";
-import baseTheme from "gatsby-theme-stripe-storefront/src/gatsby-plugin-theme-ui";
+import merge from 'deepmerge'
+import baseTheme from 'gatsby-theme-stripe-storefront/src/gatsby-plugin-theme-ui'
 
 export default merge(baseTheme, {
   colors: {
-    primary: "coral",
-    primaryText: "black",
-    secondary: "skyblue"
-  }
-});
+    primary: '#03275A',
+    primaryText: '#fff',
+    secondary: '#1A7DD7',
+    secondaryText: 'black',
+    accent: '#F34605',
+  },
+})
 ```
 
 Change the primary, secondary and primaryText values to be the colors that you desire.
@@ -85,14 +98,16 @@ export default props => <Logo {...props} logo={image} />
 
 ```
 
-# Copy
+# SEO
 
-To change the storefront copy, there is `strings.json` file where you can change the string value for storefront
+Because this was made with Gatsby's default starter, the SEO component is available to use on each of your pages. The index page is being shadowedjust to use the SEO component because the starter itself doesn't have SEO set up.
 
-`src/strings.json`
+# Notes
 
-```
-{
-  "storefront": "Change this copy in the strings.json file!"
-}
-```
+### Thank you page after successful transaction
+
+The `/thank-you` page deletes the shopping cart data and redirects to the home page. This was a cheap solution for not being able to clear the shopping cart after the purchase. Please make sure your successURL points to the /thank-you page.
+
+### Home Page and Products Page
+
+By default, these are the same. If you'd like to have your own content for your home page, simply make an index.js file in the `pages` directory.
