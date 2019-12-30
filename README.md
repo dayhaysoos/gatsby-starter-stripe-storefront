@@ -11,7 +11,9 @@ The base of this starter is using the default gatsby starter
 # Features
 
 - Shopping Cart experience with your Stripe products from the dashboard
-- Responsive for Desktop, tablet and Mobile
+- Responsive for desktop, tablet and mobile
+- Optimizations from Gatsby's default starter (SEO component and configuration for images)
+- Configuration for collecting billing addresses
 
 # Usage
 
